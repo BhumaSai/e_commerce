@@ -83,7 +83,7 @@ function Nav({ query }) {
                     {
                         auth ?
                             <div className="my-profile">
-                                <span className='profile' style={{ textTransform: 'capitalize' }}>{user.current[0]}</span>
+                                <span className='profile' style={{ textTransform: 'capitalize' }}>{user.current ? user.current[0] : ''}</span>
                                 {
                                     arrowToggle ?
                                         <button onClick={() => setArrowToggle(!arrowToggle)} className='btn'><AiOutlineUp /></button> :
@@ -109,6 +109,9 @@ function Nav({ query }) {
             </nav>
             {
                 msg ? <PopUp msg={msg} setMsg={setMsg} /> : null
+            }
+            {
+                product ? null : null
             }
         </>
     )

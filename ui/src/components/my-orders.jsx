@@ -2,8 +2,6 @@ import React from 'react'
 import Nav from '../nav/Nav'
 import { NavLink, Outlet } from 'react-router-dom'
 import './myorders.css'
-import SingleProduct from './myOrdersComponents/SingleProduct'
-import MultiProducts from './myOrdersComponents/MultiProducts'
 
 function MyOrders() {
     return (

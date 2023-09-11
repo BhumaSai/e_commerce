@@ -17,13 +17,14 @@ db.connect(process.env.MONGO_URI)
 
 app.use(cors(
     {
-        origin: 'http://localhost:3000',
+        origin: 'https://e_commerce.netlify.app/',
         credentials: true,
     }
 ))
 app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.json())
+
 // Routes
 // all Products
 app.use('/', products)
@@ -36,6 +37,7 @@ app.use('/orders', Order)
 
 app.get('/signout', (req, res) => {
     try {
+
         if (req.cookies.Token) {
             res.clearCookie('Token')
             return res.status(201).json({

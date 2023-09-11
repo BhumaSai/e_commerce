@@ -1,4 +1,4 @@
-import React, { Suspense, createContext, lazy, useState } from 'react';
+import React, { Suspense, createContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
@@ -10,6 +10,7 @@ import NotFound from './errorhandlers/404/notFound';
 import MultiProducts from './components/myOrdersComponents/MultiProducts'
 import SingleProduct from './components/myOrdersComponents/SingleProduct'
 import OrderMethod from './orders/orderMethod';
+import Search from './components/Search'
 
 // dynamic  importing
 const Home = React.lazy(() => import('./components/Home'))
@@ -24,7 +25,6 @@ const Furniture = React.lazy(() => import('./categories/Furniture'))
 const Electronics = React.lazy(() => import('./categories/Electronics'))
 const MyProfile = React.lazy(() => import('./components/my-profile'))
 const MyOrders = React.lazy(() => import('./components/my-orders'))
-const Search = React.lazy(() => { import('./components/Search') })
 
 export const Store = createContext()
 

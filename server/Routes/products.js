@@ -39,7 +39,7 @@ products.get('/search/product', async (req, res) => {
             return type
 
         })
-        if (getSearch.length === 0) {
+        if (getSearch.length === 0 || !getSearch) {
             return res.json(allProducts)
         }
         return res.status(201).json(getSearch)
