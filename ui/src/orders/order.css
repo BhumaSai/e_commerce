@@ -1,0 +1,141 @@
+.order-method-section {
+    width: 100%;
+    height: auto;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.order-method {
+    padding: 1rem;
+    width: 100%;
+    background: rgba(102, 102, 103, 0.688);
+}
+
+.order-method-section .order-method .item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #00000038;
+    padding: 5px;
+    overflow-wrap: break-word;
+}
+
+.order-method-section .order-method .item .item-img {
+    width: 30%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.order-method-section .order-method .item .item-img img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.order-method-section .order-method .item .item-img .buttons {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-method-section .order-method .item .item-img .buttons button {
+    width: 30px;
+    height: 100%;
+    font-weight: 800;
+    font-size: 1rem;
+    outline: none;
+}
+
+.order-method-section .order-method .item .item-img .buttons .quantity {
+    min-width: 35px;
+    padding: 3px;
+}
+
+
+.order-method-section .order-method .item .item-content {
+    width: 80%;
+    text-align: left;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.order-method-section .order-method .item .item-content h3 {
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+}
+
+.order-method .payment-type {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.205);
+    overflow-wrap: break-word;
+}
+
+.order-method .payment-type div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 3px;
+    overflow: auto;
+}
+
+
+
+.order-method .payment-type h3 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+
+
+.order-method .payment-type #buy {
+    width: 50%;
+    font-size: 1rem;
+    align-self: center;
+    padding: 5px;
+    text-transform: uppercase;
+    background: var(--btn-bg);
+    border-radius: 2rem;
+    color: #ffffff;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
+
+.order-method .payment-type #buy-btn {
+    width: 50%;
+    font-size: 1rem;
+    align-self: center;
+    padding: 5px;
+    text-transform: uppercase;
+    background: var(--btn-hover);
+    border-radius: 2rem;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    cursor: wait;
+}
+
+.order-method .payment-type .buy:hover {
+    scale: 0.9;
+    background: var(--btn-hover);
+    box-shadow: 0px 0px 2px 1px rgb(50, 69, 69);
+}
+
+@media screen and (min-width:950px) {
+    .order-method {
+        width: 80%;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,242 @@
+.onSuccess {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    gap: 1rem;
+    background: #84848973;
+}
+
+.onSuccess .onsuccess-container {
+    width: 50%;
+    height: 250px;
+    background: rgb(255, 255, 255);
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 10011;
+    gap: 1rem;
+    flex-direction: column;
+    color: #000;
+    box-shadow: 0 0 1px 1px #58f9e1;
+    position: relative;
+}
+
+.onSuccess .timeOut {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6px;
+    background: rgb(0, 242, 206);
+
+}
+
+.onsuccess-container ul {
+    rotate: 0;
+}
+
+.onsuccess-container ul li {
+    list-style: none;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    animation: success 1s 1;
+    z-index: 1;
+}
+
+@keyframes success {
+    from {
+        transform: translatey(0);
+
+    }
+
+    to {
+        transform: translatey(-150px);
+    }
+}
+
+.onsuccess-container h3 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.onsuccess-container button {
+    position: absolute;
+    bottom: 2rem;
+    background: var(--btn-bg);
+    padding: .5rem;
+    font-weight: 900;
+}
+
+.onsuccess-container button:hover {
+    background: var(--btn-hover);
+    border-radius: .5rem;
+    transition: .1s;
+}
+
+@media screen and (max-width:600px) {
+    .onSuccess .onsuccess-container {
+        width: 80%;
+    }
+}
+
+/* server error */
+.server {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    color: #fc0707;
+}
+
+.server h3 {
+    text-transform: capitalize;
+    font-size: 5rem;
+    position: relative;
+}
+
+.server h3::after {
+    content: "status 500";
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -19%);
+    color: #000;
+    font-weight: 900;
+    text-align: center;
+}
+
+.server p {
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: center;
+}
+
+.server h2 {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.server button {
+    background: var(--btn-bg);
+    padding: .5rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #fff;
+}
+
+.server button:hover {
+    background: var(--btn-hover);
+    border-radius: .5rem;
+    transition: .2s;
+}
+
+@media screen and (max-width:100px) {
+    .server h3 {
+        display: none;
+    }
+}
+
+/* server error */
+/* error component */
+
+.auth-msg {
+    position: fixed;
+    left: 50%;
+    top: 8%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    height: 50px;
+}
+
+.auth-msg p {
+    min-height: 50%;
+    min-width: 20%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    background: var(--error);
+    padding: .4rem;
+    position: relative;
+    color: #000;
+    font-weight: 800;
+    border-radius: 1rem;
+    text-transform: capitalize;
+}
+
+.auth-msg p::after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: var(--error);
+    position: absolute;
+    top: 100%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    rotate: 50deg;
+    z-index: -1;
+}
+
+
+/* error component */
+/* not-signed section     */
+
+.not-signed-section {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: .4rem;
+}
+
+.not-signed-section p,
+h1 {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: larger;
+}
+
+.not-signed-section .notSignedBtn {
+    background: var(--btn-bg);
+    padding: .4rem;
+    min-width: 50px;
+    font-size: medium;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #fff;
+}
+
+.not-signed-section .notSignedBtn:hover {
+    background: var(--btn-hover);
+    border-radius: .5rem;
+    transition: .2s;
+}
+
+.not-signed-section h1 {
+    text-transform: capitalize;
+}
+
+@media screen and (max-width:100px) {
+
+    .not-signed-section .notSignedBtn {
+        font-size: small;
+        size: initial;
+    }
+
+    .not-signed-section p,
+    h1 {
+        font-size: smaller;
+    }
+}
+
+/* not-signed section     */

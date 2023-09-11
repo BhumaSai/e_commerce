@@ -1,0 +1,276 @@
+.home-section {
+    width: 100%;
+    padding: 0 .5rem;
+    height: auto;
+}
+
+.main-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    padding: .9rem;
+    background: #000;
+    overflow: auto;
+    scrollbar-width: none;
+    z-index: 10;
+}
+
+.main-links::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.data-content {
+    margin: 3rem 0;
+}
+
+.main-links .link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--light);
+    padding: .2em .5rem;
+    border-radius: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.main-links .link.active {
+    background: var(--active);
+    color: #000;
+}
+
+@media screen and (max-width:1000px) {
+    .main-links {
+        justify-content: flex-start;
+    }
+}
+
+/* my-profile section */
+.my-profile-section {
+    height: 100%;
+    width: 100%;
+    text-transform: capitalize;
+
+}
+
+.my-profile-section .my-profile-body {
+    width: 100%;
+    height: auto;
+    background: #7c7c7c4d;
+    padding: 1rem;
+    position: relative;
+    overflow-wrap: break-word;
+}
+
+.edit-section {
+    min-width: 20%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4px;
+}
+
+.edit-section button {
+    width: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: .6em;
+}
+
+.my-profile-body .my-profile-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: .6rem;
+    text-align: left;
+}
+
+.my-profile-body .my-profile-content img {
+    width: 75px;
+    height: 75px;
+    align-self: center;
+    border-radius: 50%;
+}
+
+.my-profile-body .my-profile-content .links {
+    width: 100%;
+    padding: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.my-profile-body .my-profile-content h4 {
+    padding: 5px;
+    overflow-wrap: break-word;
+}
+
+.my-profile-body .my-profile-content .links:hover {
+    background: rgb(128, 128, 128);
+    color: #000000c0;
+}
+
+.my-profile-body .my-profile-content .address {
+    width: 100%;
+    overflow-wrap: break-word;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+}
+
+.my-profile-content h3 {
+    text-align: center;
+    overflow-wrap: break-word;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    background: var(--active);
+    padding: 2px;
+}
+
+
+
+.address .address-det {
+    font-size: .9rem;
+}
+
+/* edit user details */
+.edit-user-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background: rgb(0, 0, 0);
+}
+
+.edit-user-details .edit-details {
+    width: 80%;
+    max-height: 90%;
+    background: rgb(0, 0, 0);
+    position: relative;
+    padding: 7px;
+    border-radius: 9px;
+    overflow: scroll;
+    scrollbar-width: none;
+    border: 1px solid #099;
+}
+
+.edit-user-details .edit-details h4 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+.edit-user-details .closeBtn {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    font-size: 1.3em;
+}
+
+.closeIcon {
+    border-radius: 50%;
+    color: #fff;
+}
+
+.closeIcon:hover {
+    color: rgb(255, 0, 0);
+}
+
+.edit-user-details .edit-details .edit-details-form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.edit-user-details .edit-details .edit-details-form .detL {
+    width: 80%;
+    color: #099;
+    font-stretch: narrower;
+}
+
+.edit-user-details .edit-details .edit-details-form input {
+    height: 25px;
+    width: 80%;
+    font-size: small;
+    text-transform: capitalize;
+}
+
+.edit-user-details .edit-details .edit-details-form #saveEditDet {
+    width: 50%;
+    height: 40px;
+    background: var(--input-bg);
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-weight: 800;
+    margin-top: .8rem;
+    font-size: small;
+}
+
+.edit-user-details .edit-details .edit-details-form #saveEditDet:hover {
+    background: var(--input-hover);
+    scale: 0.9;
+}
+
+/* edit user details */
+@media screen and (min-width:700px) {
+    .my-profile-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .my-profile-section .my-profile-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        align-items: left;
+        background: rgba(121, 121, 121, 0.579);
+        padding: 10px;
+    }
+
+}
+
+@media screen and (min-width:1100px) {
+    .my-profile-section .my-profile-body {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:200px) {
+    .my-profile-body .my-profile-content img {
+        width: 80%;
+        height: auto;
+    }
+
+    .my-profile-content h3 {
+        font-size: x-small;
+    }
+}
+
+/* my-profile section */

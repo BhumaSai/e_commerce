@@ -1,0 +1,47 @@
+.loader-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    border-top: 5px solid #ffffff27;
+    border-bottom: 5px solid #ffffff27;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-right-style: ridge;
+    border-left-style: ridge;
+    border-inline-color: rgb(169, 45, 252);
+    animation: loaderAnime 2s infinite;
+}
+
+@keyframes loaderAnime {
+    0% {
+        width: 0;
+        height: 0;
+        rotate: 360deg;
+    }
+
+    50% {
+        width: 50px;
+        height: 50px;
+        rotate: -360deg;
+    }
+
+    100% {
+        width: 0px;
+        height: 0px;
+        rotate: 360deg;
+        border-right-style: dotted;
+        border-left-style: dotted;
+    }
+}

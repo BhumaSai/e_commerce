@@ -1,0 +1,27 @@
+.orders-links {
+    width: 100%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    padding: 5px;
+    text-transform: capitalize;
+    margin-bottom: .3rem;
+}
+
+.orders-links a {
+    width: 50%;
+    background: #fff;
+    padding: 4px;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: small;
+}
+
+.orders-links a.active {
+    background: rgba(129, 77, 172, 0.601);
+    text-transform: uppercase;
+    color: #fff;
+}

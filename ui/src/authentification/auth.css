@@ -1,0 +1,331 @@
+.login-section {
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+}
+
+.login-container {
+    width: 50%;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    border: 2px groove #0cffdf;
+    overflow-wrap: break-word;
+}
+
+.login-container h3 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.login-container .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-form {
+    width: 80%;
+}
+
+
+.login-form input {
+    height: 30px;
+    text-transform: capitalize;
+    border-radius: .2rem;
+    background: #000;
+    padding: 0 5px;
+}
+
+
+
+.login-form input:nth-child(3) {
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+
+.login-form input:nth-child(3)::before {
+    content: 'remember me';
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100px;
+}
+
+.login-form label {
+    text-transform: capitalize;
+    width: 100%;
+}
+
+
+.login-form .submit {
+    background: var(--input-bg);
+    font-weight: 900;
+    text-transform: capitalize;
+    width: 50%;
+    align-self: center;
+    height: 40px;
+    border: none;
+    border-radius: 1rem;
+    color: #000;
+    cursor: pointer;
+    font-size: 2vh;
+
+}
+
+.login-form .submit:hover {
+    background: var(--input-hover);
+    box-shadow: 0 0 3px #0cffdf;
+}
+
+.auth-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-transform: capitalize;
+}
+
+.auth-links a,
+.auth-links p a {
+    text-decoration: none;
+    color: #7b00ff;
+}
+
+@media screen and (max-width:700px) {
+    .login-container {
+        width: 90%;
+        margin-top: 3rem;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+}
+
+/* register section */
+.register-section {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.register-container {
+    width: 50%;
+    height: auto;
+    border: 2px groove #0cffdf;
+    padding: .5rem;
+    overflow-wrap: break-word;
+}
+
+.register-section h3 {
+    text-align: center;
+    font-size: 1.9rem;
+    text-transform: capitalize;
+    color: #a216ffd5;
+    text-shadow: 1px 1px 3px rgb(119, 32, 250);
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.register-form input {
+    height: 45px;
+    width: 90%;
+    align-self: center;
+    text-transform: capitalize;
+    border-radius: .4rem;
+}
+
+.register-container .address {
+    width: 90%;
+    align-self: center;
+    display: flex;
+}
+
+.register-form select {
+    width: 50%;
+    align-self: center;
+    margin-left: 1rem;
+    background: #ffffffcd;
+    padding: .3rem;
+    font-size: .8rem;
+    border-radius: .5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+
+.register-form select option:checked {
+    font-weight: 700;
+    width: 100%;
+    background: #000;
+    color: #ffffff;
+}
+
+.register-form .gender {
+    width: 90%;
+    padding: 1.5rem;
+    /* align-items: center; */
+    display: flex;
+    gap: 1rem;
+    overflow: scroll;
+}
+
+.register-form .gender input {
+    width: 15px;
+    height: 15px;
+    margin-right: -10px;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    accent-color: purple;
+}
+
+.register-form .gender label {
+    text-transform: uppercase;
+}
+
+.register-form .submit {
+    background: var(--input-bg);
+    width: 50%;
+    height: 35px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1.5rem;
+}
+
+.register-form .submit:hover {
+    background: var(--input-hover);
+    box-shadow: 0 0 3px #0cffdf;
+}
+
+.submit-load {
+    opacity: 0.4;
+}
+
+.login {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    text-transform: capitalize;
+
+}
+
+.login span {
+    color: #fff;
+    margin-right: .4rem;
+    font-size: 1rem;
+}
+
+.login a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.invalidInput {
+    width: 100%;
+    min-height: 15px;
+}
+
+.invalidInput p {
+    width: auto;
+    text-align: center;
+    text-transform: capitalize;
+    color: red;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+
+
+@media screen and (max-width:800px) {
+    .register-container {
+        width: 90%;
+    }
+
+    .invalidInput p {
+        font-size: .8rem;
+    }
+}
+
+/* register section */
+
+/* forget password */
+.forget-password {
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+
+}
+
+.forget-password form {
+    width: 60%;
+    height: 100%;
+    border: 1px groove #099;
+    border-radius: .5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forget-password form input {
+    width: 80%;
+    align-self: center;
+    height: 45px;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.forget-password form .submit {
+    background: var(--input-bg);
+    width: 50%;
+    height: 35px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: .5rem;
+    align-self: center;
+}
+
+.forget-password form .submit:hover {
+    background: var(--input-hover);
+    box-shadow: 0 0 7px #099;
+}
+
+.sending {
+    opacity: 0.4;
+}
+
+@media screen and (max-width:600px) {
+    .forget-password form {
+        width: 90%;
+    }
+}
+
+/* forget password */

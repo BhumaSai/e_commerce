@@ -1,0 +1,315 @@
+.single-order-products {
+    width: 100vw;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.single-order-products .ordered-items {
+    width: 100%;
+    height: auto;
+    background: #2d2c2cb7;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    overflow: hidden;
+
+}
+
+.single-order-products .ordered-items .image-section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.single-order-products .ordered-items .image-section img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 7px;
+}
+
+.single-order-products .ordered-items .image-section figcaption {
+    width: 70%;
+    text-align: center;
+    height: auto;
+    font-size: .7rem;
+    margin: 0 auto;
+    background: rgba(94, 94, 94, 0.061);
+    padding: 4px;
+    font-size: .9em;
+}
+
+.single-order-products .ordered-items .item-details {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: grid;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.single-order-products .ordered-items .item-details h5 {
+    width: 100%;
+    height: auto;
+    background: rgba(97, 95, 95, 0.369);
+    padding: 5px;
+    text-align: left;
+    line-height: 1rem;
+    border-radius: 4px;
+    overflow-wrap: break-word;
+    animation: animW .5s 1;
+}
+
+@keyframes animW {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+.single-order-products .ordered-items .item-details button {
+    width: 70%;
+    align-self: center;
+    background: var(--green);
+    height: auto;
+    text-transform: capitalize;
+    font-weight: 900;
+    padding: 3px;
+    margin: 0 auto;
+}
+
+.single-order-products .ordered-items .item-details button:hover {
+    background: rgba(0, 128, 0, 0.521);
+    scale: 0.9;
+    border-radius: 2rem;
+}
+
+@media screen and (min-width:650px) {
+    .single-order-products .ordered-items {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:750px) {
+    .single-order-products .ordered-items {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:850px) {
+    .single-order-products .ordered-items {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .single-order-products .ordered-items {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .single-order-products {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .single-order-products .ordered-items {
+        border: 1px solid red;
+        padding: 7px;
+        border-radius: 9px;
+    }
+}
+
+/* multiple products ordered section */
+.multi-product-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-transform: capitalize;
+    position: relative;
+    padding: 1rem;
+}
+
+.multi-product-section .orders-data {
+    width: 100%;
+    background: #000;
+    padding: .4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.multi-product-section .orders-data h2 {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.multi-product-section .orders-data h5 {
+    overflow-wrap: break-word;
+    width: 100%;
+    height: auto;
+    background: rgba(76, 76, 76, 0.3);
+    margin-bottom: .5rem;
+    text-align: left;
+    line-height: 18px;
+    padding: 7px;
+    animation: animW .5s 1;
+}
+
+.multi-product-section .orders-data h5 mark {
+    padding: 5px;
+    font-variant: small-caps;
+    border-radius: 7px;
+    color: #fff;
+    background: green;
+}
+
+.multi-product-section .orders-data button {
+    background: var(--btn-bg);
+    width: 50%;
+    text-transform: capitalize;
+    padding: 5px;
+    margin: 1rem auto;
+    font-weight: 800;
+    transition: .5s;
+}
+
+.multi-product-section .orders-data button:hover {
+    background: var(--btn-hover);
+    scale: 0.9;
+    border-radius: 1rem;
+    color: #fff;
+}
+
+@media screen and (min-width:690px) {
+    .multi-product-section .orders-data {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .multi-product-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .multi-product-section .orders-data h5 {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .multi-product-section .orders-data {
+        background: rgba(62, 62, 62, 0.44);
+        border-radius: 17px 0 17px 0;
+    }
+
+}
+
+/* multiple products ordered section */
+/* show ordered items */
+.show-ordered-products {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    animation: toTop .5s 1;
+    transition: 1s;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+@keyframes toTop {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+.show-ordered-products button {
+    width: 10%;
+    height: 25px;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.show-ordered-products button:hover {
+    background: var(--btn-hover);
+    color: #fff;
+}
+
+.show-ordered-products .ordered-item {
+    width: 100%;
+    height: auto;
+    background: rgba(108, 107, 107, 0.284);
+    padding: .5rem;
+}
+
+.show-ordered-products .ordered-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background: rgba(46, 47, 46, 0.367);
+    border-radius: 1rem;
+}
+
+.show-ordered-products .ordered-item .details {
+    line-height: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.show-ordered-products .ordered-item .details h5 {
+    width: 100%;
+    height: auto;
+    background: #00000062;
+    padding: 5px;
+    text-align: left;
+}
+
+@media screen and (min-width:690px) {
+    .show-ordered-products .ordered-item {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .show-ordered-products .ordered-item {
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 1rem;
+    }
+
+
+}
+
+/* show ordered items */

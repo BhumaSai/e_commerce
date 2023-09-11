@@ -1,0 +1,204 @@
+.nav-section-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: var(--nav-color);
+    color: #fff;
+    padding: .5rem;
+    box-shadow: 0 0 2px 2px #099;
+    z-index: 99;
+}
+
+.nav-section-items {
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-section-title {
+    overflow: show;
+}
+
+.nav-section-title a h3 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.padding {
+    padding: .2rem;
+}
+
+
+.search-area {
+    width: 40%;
+    color: #000;
+    background: #fff;
+}
+
+.search-area form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+form .input-search {
+    width: 90%;
+    float: left;
+    transition: 1s;
+    color: #000;
+    font-weight: 800;
+}
+
+form button {
+    font-size: 1.3rem;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-section-items .items ul {
+    display: flex;
+    gap: 2.5rem;
+}
+
+
+.nav-section-items .items ul li {
+    list-style: none;
+}
+
+.activeicon {
+    fill: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+.items ul li a.active {
+    border-bottom: 2px solid #099;
+}
+
+.my-profile {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 5px;
+    position: relative;
+}
+
+.my-profile .profile {
+    width: 70%;
+    height: 100%;
+    font-size: 1.3Srem;
+    border-radius: 2rem;
+    color: #000;
+    text-align: center;
+}
+
+.my-profile button {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.my-profile-links {
+    position: absolute;
+    top: 110%;
+    right: 50%;
+    min-width: 110px;
+    background: #fff;
+    color: #000;
+    z-index: 10;
+    padding: .3rem;
+}
+
+.my-profile-links ul li .signout {
+    width: 100%;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: .9rem;
+}
+
+.my-profile-links ul li {
+    list-style: none;
+    text-transform: capitalize;
+    padding: 5px;
+    font-weight: 600;
+}
+
+.my-profile-links ul li .link {
+    color: #000;
+}
+
+.my-profile-links ul li:hover {
+    background: #0000008c;
+    scale: 0.9;
+}
+
+
+@media screen and (max-width:600px) {
+    .nav-section-items {
+        justify-content: space-around;
+        gap: .2rem;
+    }
+
+    .nav-section-container {
+        padding: 0;
+    }
+
+    .items ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-section-title a h3 {
+        font-size: .9rem;
+    }
+
+    .search-area {
+        width: 50%;
+        border-radius: .4rem;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .nav-section-items {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-section-title {
+        display: none;
+    }
+
+    .search-area {
+        width: 100%;
+    }
+
+    .my-profile .profile {
+        font-size: small;
+    }
+
+    .my-profile-links {
+        min-width: 70px;
+        right: -20%;
+        font-size: xx-small;
+        width: 50px;
+        text-align: center;
+    }
+
+
+}
