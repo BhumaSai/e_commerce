@@ -3,7 +3,7 @@ import ProductContainer from './productContainer'
 import useFetchProducts from '../customhook/fetchProducts'
 
 function Electronics() {
-    const { loading, Product } = useFetchProducts('/all_products/men')
+    const { loading, Product } = useFetchProducts('/api/all_products/men')
 
 
     return (

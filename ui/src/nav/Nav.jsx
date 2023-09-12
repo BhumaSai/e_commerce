@@ -26,7 +26,7 @@ function Nav({ query }) {
         e.preventDefault()
         if (search !== '') {
             localStorage.setItem('query', search)
-            URL.get(`/search/product?product=${localStorage.getItem('query')}`).then((res) => {
+            URL.get(`/api/search/product?product=${localStorage.getItem('query')}`).then((res) => {
                 setProduct(res.data);
             }).catch((err) => {
                 alert(err.message);

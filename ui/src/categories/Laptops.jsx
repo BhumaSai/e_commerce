@@ -3,7 +3,7 @@ import ProductContainer from './productContainer'
 import useFetchProducts from '../customhook/fetchProducts'
 
 function Laptops() {
-    const { loading, Product } = useFetchProducts('/all_products/d')
+    const { loading, Product } = useFetchProducts('/api/all_products/d')
 
 
     return (

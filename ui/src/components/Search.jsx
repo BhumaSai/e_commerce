@@ -5,7 +5,7 @@ import useFetchProducts from '../customhook/fetchProducts'
 import './home.css'
 
 function Search() {
-    const { loading, Product } = useFetchProducts(`/search/product?product=${localStorage.getItem('query')}`)
+    const { loading, Product } = useFetchProducts(`/api/search/product?product=${localStorage.getItem('query')}`)
     return (
         <>
             <Nav query={localStorage.getItem('query')} />

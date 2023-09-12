@@ -20,7 +20,7 @@ db.connect(process.env.MONGO_URI)
 
 
 app.use(cors({
-    origin: 'https://fanciful-boba-d95e39.netlify.app',
+    origin: ['https://feshopping.netlify.app', 'http://localhost:3000', '*'],
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
     credentials: true
 }));
@@ -30,7 +30,7 @@ app.use(bodyParser.json())
 
 // Routes
 // all Products
-app.use('/', products)
+app.use('/api', products)
 // authentification
 app.use('/authentification', auth)
 // my-profile 
@@ -68,10 +68,6 @@ app.get('/auth', (req, res) => {
         })
     }
 })
-app.get('/dfa', (req, res) => {
-    res.cookie('token', 'fjlasdj').send('cookie set')
-})
-
 
 
 const Port = process.env.Port || 4000

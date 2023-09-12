@@ -30,7 +30,7 @@ function Register() {
     }
 
     // location details
-    const { Product } = useFetchProducts('/location')
+    const { Product } = useFetchProducts('/api/location')
 
     // filter districts
     const filteritems = (e) => {
