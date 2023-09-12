@@ -9,6 +9,7 @@ const auth = require('./Routes/authentification');
 const cookieParser = require('cookie-parser');
 const myProfile = require('./Routes/mypProfile');
 const Order = require('./Routes/order');
+const path = require('path');
 
 // .env
 require('dotenv').config()
@@ -19,14 +20,13 @@ db.connect(process.env.MONGO_URI)
 
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://fanciful-boba-d95e39.netlify.app',
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
     credentials: true
 }));
 app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.json())
-
 
 // Routes
 // all Products

@@ -5,7 +5,7 @@
         "category": "men's hoodie",
         "type": "hoodie",
         "color": "yellow",
-        "image": "/products/menProducts/hoodie-01.avif",
+        "image": "../products/menProducts/hoodie-01.avif",
         "price": "499",
         "title": "men's yellow hoodie",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, repudiandae. Blanditiis voluptatem aspernatur quaerat sunt vero aliquid voluptates, reprehenderit voluptas."
@@ -16,7 +16,7 @@
         "category": "men's hoodie",
         "type": "hoodie",
         "color": "grey",
-        "image": "/products/menProducts/hoodie-02.avif",
+        "image": "../products/menProducts/hoodie-02.avif",
         "price": "200",
         "title": "men's grey hoodie",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, repudiandae. Blanditiis voluptatem aspernatur quaerat sunt vero aliquid voluptates, reprehenderit voluptas."
