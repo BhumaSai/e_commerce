@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { URL } from '../url'
 import AuthError from '../messageComponents/authError'
 
+
 function Login() {
 
     const [Mail, setMail] = useState('')
@@ -15,12 +16,13 @@ function Login() {
 
     const navigate = useNavigate()
 
+
     const loginAuth = (e) => {
         e.preventDefault();
         if (Mail !== '' || Password !== '') {
             try {
                 setWait(true)
-                URL.post('/authentification/login', { Mail, Password }).then((res) => {
+                URL.post(`/authentification/login?mail=${Mail}&pass=${Password}`).then((res) => {
                     setError(res.data.errorMsg);
                     localStorage.setItem('User', JSON.stringify(res.data.UserDet))
                     setWait(false)

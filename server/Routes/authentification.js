@@ -38,25 +38,25 @@ auth.post('/register', async (req, res) => {
 
 auth.post('/login', async (req, res) => {
     try {
-        const { Mail, Password } = await req.body
+        const { mail, pass } = await req.query
+
         const checkMail = await User.findOne({
-            mail: Mail
+            mail: mail
         })
         if (!checkMail) {
             return res.status(404).json({
                 errorMsg: 'invalid Mail or Password'
             })
         }
-        const decodePassword = await bcrypt.compare(Password, checkMail.password)
+        const decodePassword = await bcrypt.compare(pass, checkMail.password)
         if (!decodePassword) {
             return res.status(401).json({
                 errorMsg: 'incorrect Password'
             })
         }
-
         // jwt
         const Token = jwt.sign({ id: checkMail._id }, process.env.JWT_PASSWORD, { expiresIn: '30d' })
-        res.cookie('Token', Token, { httpOnly: true, secure: true, expires: new Date(Date.now() + 86400000), sameSite: "none", })
+        res.cookie('Token', Token, { httpOnly: true, secure: true, expires: new Date(Date.now() + 86400000), sameSite: "none" })
 
         return res.status(201).json({
             errorMsg: 'login successfully',

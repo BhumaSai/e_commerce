@@ -19,9 +19,9 @@ function useFetchProducts(url) {
                     setLoading(false)
                 })
                 .catch(error => {
-                    setStatus(error.response.status);
+                    setStatus(error.message || error.response.status);
                     setLoading(false)
-                    setMsg(error.response.data.errorMsg)
+                    setMsg(error.message || error.response.data.errorMsg)
                 })
         } catch (error) {
             setLoading(false)

@@ -12,18 +12,21 @@ const Order = require('./Routes/order');
 
 // .env
 require('dotenv').config()
+
+
 // db 
 db.connect(process.env.MONGO_URI)
 
-app.use(cors(
-    {
-        origin: 'https://e_commerce.netlify.app/',
-        credentials: true,
-    }
-))
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+    credentials: true
+}));
 app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.json())
+
 
 // Routes
 // all Products
@@ -37,7 +40,6 @@ app.use('/orders', Order)
 
 app.get('/signout', (req, res) => {
     try {
-
         if (req.cookies.Token) {
             res.clearCookie('Token')
             return res.status(201).json({
@@ -51,19 +53,27 @@ app.get('/signout', (req, res) => {
     }
 })
 app.get('/auth', (req, res) => {
-
-    if (req.cookies.Token) {
+    try {
+        if (!req.cookies.Token) {
+            return res.status(404).json({
+                signed: false
+            })
+        }
         return res.status(201).json({
             signed: true
         })
-    } else {
-        return res.status(404).json({
-            signed: false
+    } catch (error) {
+        res.status(500).json({
+            errorMsg: 'server error'
         })
     }
 })
+app.get('/dfa', (req, res) => {
+    res.cookie('token', 'fjlasdj').send('cookie set')
+})
+
 
 
 const Port = process.env.Port || 4000
 
-http.listen(Port, () => console.log('server started'))
+http.listen(Port)

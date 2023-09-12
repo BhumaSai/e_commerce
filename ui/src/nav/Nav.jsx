@@ -50,7 +50,7 @@ function Nav({ query }) {
         URL.get('/auth').then(res => {
             setAuth(res.data.signed)
         }).catch(err => {
-            setAuth(err.response.data.signed);
+            setAuth(false || err.response.data.signed);
         })
     }, [])
     // drop dowm close function
