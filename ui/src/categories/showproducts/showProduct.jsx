@@ -3,6 +3,7 @@ import './showProduct.css'
 import { GrClose } from 'react-icons/gr'
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsCart } from 'react-icons/bs';
+import { IMGURL } from '../../url';
 
 function ShowProduct({ addToCart, addToWishlist, product, setProduct }) {
 
@@ -12,7 +13,7 @@ function ShowProduct({ addToCart, addToWishlist, product, setProduct }) {
             <div className="single-product">
                 <div className="product">
                     <button onClick={() => setProduct('')} className='btn close-btn'><GrClose fontSize={'1.5rem'} style={{ background: "#fff", borderRadius: '4px' }} /></button>
-                    <img src={product.image} alt="" />
+                    <img src={`${IMGURL}` + product.image} alt="" />
                     <div className="product-det">
                         <h4>title : {product.title} </h4>
                         <h5><b>type</b> : {product.type}</h5>

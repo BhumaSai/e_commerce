@@ -4,6 +4,7 @@ import useFetchProducts from '../../customhook/fetchProducts'
 import Loading from '../../errorhandlers/loading'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import NotSigned from '../../messageComponents/notsigned'
+import { IMGURL } from '../../url'
 
 function MultiProducts() {
     const { loading, Status, Product, Msg } = useFetchProducts('/authorized/my-orders-multipleProducts')
@@ -38,10 +39,11 @@ function MultiProducts() {
                     {
                         Array.isArray(showData) && showData.map(item => {
                             const { _id, product, category, type, color, image, title, price } = item
+                            console.log(category);
                             return (
                                 <div className="ordered-item" key={_id}>
                                     <h1>title:- {title}</h1><br />
-                                    <img src={image} alt="product" />
+                                    <img src={`${IMGURL}` + image} alt="product" />
                                     <div className="details">
                                         <h5>type :- {type}</h5>
                                         <h5>product :- {product}</h5>

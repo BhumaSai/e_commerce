@@ -47,7 +47,12 @@ function Nav({ query }) {
     }
 
     useEffect(() => {
-        URL.get('/auth').then(res => {
+        URL.get('/auth', {
+            headers: {
+                "Access-Control-Allow-Origin": "https://feshopping.netlify.app",
+                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+            }
+        }).then(res => {
             setAuth(res.data.signed)
         }).catch(err => {
             setAuth(false || err.response.data.signed);

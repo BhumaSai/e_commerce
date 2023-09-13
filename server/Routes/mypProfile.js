@@ -90,7 +90,6 @@ myProfile.delete('/deleteCartItems/:id', checkToken, async (req, res) => {
             errorMsg: 'item deleted'
         })
     } catch (error) {
-        console.log(error);
         return res.status(500).json({
             errorMsg: 'server error'
         })
@@ -108,7 +107,6 @@ myProfile.delete('/deleteWishlistItems/:id', checkToken, async (req, res) => {
             errorMsg: 'item deleted'
         })
     } catch (error) {
-        console.log(error);
         return res.status(500).json({
             errorMsg: 'server error'
         })

@@ -11,6 +11,7 @@ import MultiProducts from './components/myOrdersComponents/MultiProducts'
 import SingleProduct from './components/myOrdersComponents/SingleProduct'
 import OrderMethod from './orders/orderMethod';
 import Search from './components/Search'
+import Test from './orders/test';
 
 // dynamic  importing
 const Home = React.lazy(() => import('./components/Home'))
@@ -59,6 +60,7 @@ function App() {
             <Route path='multiProduct' element={<MultiProducts />} />
           </Route>
           <Route path="/order-method?" element={<OrderMethod />} />
+          <Route path='/test' element={<Test />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Store.Provider>

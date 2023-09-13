@@ -1,16 +1,17 @@
 const products = require('express').Router()
-const allProducts = require('../api/allprodcuts.json')
 const location = require('../api/states.json');
+const product = require('../models/product');
 
 
-products.get('/all_products/:product', (req, res) => {
+products.get('/all_products/:product', async (req, res) => {
     try {
-        const data = allProducts.filter(data => {
+        const allProduct = await product.find()
+        const data = allProduct.filter(data => {
             return data.product === req.params.product
         })
 
         if (data.length === 0) {
-            return res.json(allProducts)
+            return res.json(allProduct)
         }
         return res.status(200).json(data)
     } catch (error) {
@@ -31,11 +32,11 @@ products.get('/location', (req, res) => {
 // search products
 products.get('/search/product', async (req, res) => {
     try {
+        const allProducts = await product.find()
         const inputSearch = await req.query.product
         const getSearch = allProducts.filter(data => {
-            const type = data.type.toLowerCase() === inputSearch.toLowerCase() ||
-                data.title.toLowerCase() === inputSearch.toLowerCase() || data.category.toLowerCase() === inputSearch.toLowerCase() || data.color.toLowerCase() === inputSearch.toLowerCase() ||
-                data.type.slice(0, 3) === inputSearch.slice(0, 3) || data.category.slice(0, 3) === inputSearch.slice(0, 3) || data.color.slice(0, 3) === inputSearch.slice(0, 3) || data.title.slice(0, 3) === inputSearch.slice(0, 3)
+            const type = data.type === inputSearch.toLowerCase() ||
+                data.title === inputSearch.toLowerCase() || data.category === inputSearch.toLowerCase() || data.color === inputSearch.toLowerCase()
             return type
 
         })

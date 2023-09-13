@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './products.css'
 import ShowProduct from './showproducts/showProduct'
 import { AiOutlineHeart } from 'react-icons/ai'
-import { URL } from '../url'
+import { IMGURL, URL } from '../url'
 import PopUp from '../messageComponents/popup'
 import Loading from '../errorhandlers/loading'
 
@@ -52,7 +52,7 @@ function ProductContainer({ loading, Products }) {
                                 return (
                                     <div key={idx} className='men-product-card' >
                                         <button title='add to wishlist' className='btn wishlist' onClick={() => addToWishlist(data)}><AiOutlineHeart className='icon' /></button>
-                                        <img src={image} onClick={() => showProduct(data)} alt={type} title={title} />
+                                        <img src={`${IMGURL}` + image} onClick={() => showProduct(data)} alt={type} title={title} />
                                         <p className='color'>color:<span style={{ color: color === 'black' ? 'purple' : color }}>{color}</span></p>
                                         <h5>price: <span> ₹ {price} </span></h5>
                                         <p>{description}</p>

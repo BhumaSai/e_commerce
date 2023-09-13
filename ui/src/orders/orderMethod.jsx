@@ -3,7 +3,7 @@ import './order.css'
 import useFetchProducts from '../customhook/fetchProducts'
 import Loading from '../errorhandlers/loading'
 import ServerError from '../messageComponents/serverError'
-import { URL } from '../url'
+import { IMGURL, URL } from '../url'
 import PopUp from '../messageComponents/popup'
 import OrderSuccess from '../messageComponents/ordermsg/OrderSuccess'
 import NotSigned from '../messageComponents/notsigned'
@@ -54,7 +54,7 @@ function OrderMethod() {
                             {
                                 Product || !Status === 500 ? <div className="item">
                                     <div className="item-img">
-                                        <img src={Product.image} alt="product" width='100%' height='auto' />
+                                        <img src={`${IMGURL}` + Product.image} alt="product" width='100%' height='auto' />
                                         <div className="buttons">
                                             <button onClick={() => {
                                                 if (quantity <= 0) {

@@ -7,7 +7,7 @@ function MyOrders() {
     return (
         <>
             <Nav />
-            <div className="orders-links">d
+            <div className="orders-links">
                 <NavLink className='link' to='/my-orders/singleProduct'>single Products</NavLink>
                 <NavLink className='link' to='/my-orders/multiProduct'>multiple Products</NavLink>
             </div>

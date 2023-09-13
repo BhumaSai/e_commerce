@@ -3,6 +3,7 @@ import './myOrderComponents.css'
 import useFetchProducts from '../../customhook/fetchProducts'
 import Loading from '../../errorhandlers/loading';
 import NotSigned from '../../messageComponents/notsigned';
+import { IMGURL } from '../../url';
 
 function SingleProduct() {
 
@@ -21,7 +22,7 @@ function SingleProduct() {
                         return (
                             <div key={idx} className='ordered-items'>
                                 <figure className="image-section">
-                                    <img src={image} alt="product" /><br />
+                                    <img src={`${IMGURL}` + image} alt="product" /><br />
                                     <figcaption>title :- {title}</figcaption>
                                 </figure>
                                 <div className="item-details">

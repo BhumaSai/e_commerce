@@ -5,7 +5,7 @@ import './items.css'
 import useFetchProducts from '../customhook/fetchProducts'
 import { AiOutlineCloseCircle, AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsTrashFill } from 'react-icons/bs'
-import { URL } from '../url'
+import { IMGURL, URL } from '../url'
 import { useNavigate } from 'react-router-dom'
 
 const OrderSuccess = loadable(() => import('../messageComponents/ordermsg/OrderSuccess'))
@@ -92,7 +92,7 @@ function Cart() {
                                                     <div key={_id} className="item">
                                                         <h1><span className='spanEle'>title : </span>{title}</h1>
                                                         <button onClick={(e) => deleteItem(e, _id, price)} className=' btn trash' title='Delete From Wishlist'>< BsTrashFill className='icon' color='#000' /></button>
-                                                        <img src={image} alt="" />
+                                                        <img src={`${IMGURL}` + image} alt="" />
                                                         <div className="content">
                                                             <h4><span className='spanEle'>category : </span>{category}</h4>
                                                             <p><span className='spanEle'>description : </span>{description}</p>

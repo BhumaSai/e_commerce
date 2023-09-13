@@ -5,7 +5,7 @@ import './items.css'
 import useFetchProducts from '../customhook/fetchProducts'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { BsTrashFill } from 'react-icons/bs'
-import { URL } from '../url'
+import { IMGURL, URL } from '../url'
 
 
 const PopUp = loadable(() => import('../messageComponents/popup'))
@@ -47,6 +47,7 @@ function Wishlist() {
         URL.put('/authorized/cart', item).then(res => {
             setMsg(res.data.errorMsg)
         }).catch(err => {
+
             setMsg(err.response.data.errorMsg)
         })
     }
@@ -71,7 +72,7 @@ function Wishlist() {
                                             return (
                                                 <div key={_id} className="item">
                                                     <h1><span>Title</span> :- {title}</h1>
-                                                    <img src={image} alt="product item" />
+                                                    <img src={`${IMGURL}` + image} alt="product item" />
                                                     <div className="content">
                                                         <h4><span>category</span> :- {category}</h4>
                                                         <p><span>description</span> :- {description}</p>
