@@ -42,7 +42,7 @@ require('dotenv').config()
 db.connect(process.env.MONGO_URI)
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://feshopping.netlify.app/",
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     credentials: true
 }));
