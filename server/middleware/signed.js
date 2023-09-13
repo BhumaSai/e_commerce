@@ -12,7 +12,6 @@ const checkToken = async (req, res, next) => {
         let User = jwt.verify(Token, process.env.JWT_PASSWORD)
         req.user = User
         next()
-
     } catch (error) {
         return res.status(500).json({ errorMsg: error.message })
     }

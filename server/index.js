@@ -42,8 +42,7 @@ require('dotenv').config()
 db.connect(process.env.MONGO_URI)
 
 app.use(cors({
-    origin: "https://feshopping.netlify.app/",
-    methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+    origin: "https://feshopping.vercel.app",
     credentials: true
 }));
 app.use(express.json())
@@ -91,6 +90,7 @@ app.get('/auth', (req, res) => {
         })
     }
 })
+
 
 
 

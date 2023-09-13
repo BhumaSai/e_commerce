@@ -1,5 +1,5 @@
 import React, { Suspense, createContext, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 
@@ -35,34 +35,36 @@ function App() {
   return (
     <>
       <Store.Provider value={[products, setProducts]}>
-        <Routes>
-          <Route path='/e_commerce' element={<Suspense fallback={''}><Home /></Suspense>} />
-          <Route path='/' element={<Suspense fallback={''}><Home /></Suspense>} >
-            <Route index element={<MensProduct />} />
-            <Route path='men_fashions' element={<Suspense fallback={''}><MensProduct /></Suspense>} />
-            <Route path='women_fashions' element={<Suspense fallback={''}><WomenProducts /></Suspense>} />
-            <Route path='kids_wear' element={<Suspense fallback={''}><Kids /></Suspense>} />
-            <Route path='Mobiles' element={<Suspense fallback={''}><Mobile /></Suspense>} />
-            <Route path='Laptops' element={<Suspense fallback={''}><Laptops /></Suspense>} />
-            <Route path='Furniture' element={<Suspense fallback={''}><Furniture /></Suspense>} />
-            <Route path='Electronics' element={<Suspense fallback={''}><Electronics /></Suspense>} />
-          </Route>
-          <Route path='/log_in' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/forgetPassword' element={<ForgetPassword />} />
-          <Route path='/wishlist' element={<Suspense fallback={''}><Wishlist /></Suspense>} />
-          <Route path='/cart' element={<Suspense fallback={''}><Cart /></Suspense>} />
-          <Route path='/my-profile' element={<Suspense fallback={''}><MyProfile /></Suspense>} />
-          <Route path='/search/:search' element={<Suspense fallback={''}><Search /></Suspense>} />
-          <Route path='/my-orders' element={<Suspense fallback={''}><MyOrders /></Suspense>}>
-            <Route index element={<SingleProduct />} />
-            <Route path='singleProduct' element={<SingleProduct />} />
-            <Route path='multiProduct' element={<MultiProducts />} />
-          </Route>
-          <Route path="/order-method?" element={<OrderMethod />} />
-          <Route path='/test' element={<Test />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <HashRouter>
+          <Routes>
+            <Route path='/e_commerce' element={<Suspense fallback={''}><Home /></Suspense>} />
+            <Route path='/' element={<Suspense fallback={''}><Home /></Suspense>} >
+              <Route index element={<MensProduct />} />
+              <Route path='men_fashions' element={<Suspense fallback={''}><MensProduct /></Suspense>} />
+              <Route path='women_fashions' element={<Suspense fallback={''}><WomenProducts /></Suspense>} />
+              <Route path='kids_wear' element={<Suspense fallback={''}><Kids /></Suspense>} />
+              <Route path='Mobiles' element={<Suspense fallback={''}><Mobile /></Suspense>} />
+              <Route path='Laptops' element={<Suspense fallback={''}><Laptops /></Suspense>} />
+              <Route path='Furniture' element={<Suspense fallback={''}><Furniture /></Suspense>} />
+              <Route path='Electronics' element={<Suspense fallback={''}><Electronics /></Suspense>} />
+            </Route>
+            <Route path='/log_in' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/forgetPassword' element={<ForgetPassword />} />
+            <Route path='/wishlist' element={<Suspense fallback={''}><Wishlist /></Suspense>} />
+            <Route path='/cart' element={<Suspense fallback={''}><Cart /></Suspense>} />
+            <Route path='/my-profile' element={<Suspense fallback={''}><MyProfile /></Suspense>} />
+            <Route path='/search/:search' element={<Suspense fallback={''}><Search /></Suspense>} />
+            <Route path='/my-orders' element={<Suspense fallback={''}><MyOrders /></Suspense>}>
+              <Route index element={<SingleProduct />} />
+              <Route path='singleProduct' element={<SingleProduct />} />
+              <Route path='multiProduct' element={<MultiProducts />} />
+            </Route>
+            <Route path="/order-method?" element={<OrderMethod />} />
+            <Route path='/test' element={<Test />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </HashRouter>
       </Store.Provider>
     </>
   );
