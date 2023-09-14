@@ -22,7 +22,7 @@ function Login() {
         if (Mail !== '' || Password !== '') {
             try {
                 setWait(true)
-                URL.post(`/authentification/login?mail=${Mail}&pass=${Password}`).then((res) => {
+                URL.post('/authentification/login', { Mail, Password }).then((res) => {
                     setError(res.data.errorMsg);
                     localStorage.setItem('User', JSON.stringify(res.data.UserDet))
                     setWait(false)

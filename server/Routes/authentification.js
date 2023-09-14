@@ -38,17 +38,16 @@ auth.post('/register', async (req, res) => {
 
 auth.post('/login', async (req, res) => {
     try {
-        const { mail, pass } = await req.query
-
+        const { Mail, Password } = await req.body
         const checkMail = await User.findOne({
-            mail: mail
+            mail: Mail
         })
         if (!checkMail) {
             return res.status(404).json({
                 errorMsg: 'invalid Mail or Password'
             })
         }
-        const decodePassword = await bcrypt.compare(pass, checkMail.password)
+        const decodePassword = await bcrypt.compare(Password, checkMail.password)
         if (!decodePassword) {
             return res.status(401).json({
                 errorMsg: 'incorrect Password'
