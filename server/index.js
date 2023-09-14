@@ -42,8 +42,7 @@ require('dotenv').config()
 db.connect(process.env.MONGO_URI)
 
 app.use(cors({
-    origin: "https://feshopping.vercel.app",
-    // origin: "http://localhost:3000",
+    origin: ["https://feshopping.vercel.app", "https://feshopping-git-main-bhumasai.vercel.app", "https://feshopping-ka0sh6i72-bhumasai.vercel.app/", "http://localhost:3000"],
     credentials: true
 }));
 app.use(express.json())
