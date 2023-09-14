@@ -34,7 +34,7 @@ function Nav({ query }) {
             navigate(`/search/query=${search || query}`)
         }
     }
-    const signOut = (e) => {
+    const signOut = () => {
         window.location.reload()
         localStorage.clear()
         URL.get('/signout').then(res => {
@@ -47,15 +47,10 @@ function Nav({ query }) {
     }
 
     useEffect(() => {
-        URL.get('/auth', {
-            headers: {
-                "Access-Control-Allow-Origin": "https://feshopping.netlify.app",
-                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-            }
-        }).then(res => {
+        URL.get('/auth').then(res => {
             setAuth(res.data.signed)
         }).catch(err => {
-            setAuth(false || err.response.data.signed);
+            setAuth(false);
         })
     }, [])
     // drop dowm close function
