@@ -55,7 +55,7 @@ auth.post('/login', async (req, res) => {
         }
         // jwt
         const Token = jwt.sign({ id: checkMail._id }, process.env.JWT_PASSWORD, { expiresIn: '30d' })
-        res.cookie('Token', Token, { httpOnly: true, secure: false, expires: new Date(Date.now() + 86400000), sameSite: "lax" })
+        res.cookie('Token', Token, { httpOnly: true, expires: new Date(Date.now() + 86400000), sameSite: "none", secure: true })
 
         return res.status(201).json({
             errorMsg: 'login successfully',

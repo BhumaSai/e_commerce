@@ -42,7 +42,7 @@ require('dotenv').config()
 db.connect(process.env.MONGO_URI)
 
 app.use(cors({
-    origin: ['http://feshopping.vercel.app', 'http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://feshopping.vercel.app'],
     methods: ["GET", "POST", "PATH", "UPDATE", "DELETE", "PUT"],
     credentials: true
 }));

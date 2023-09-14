@@ -7,9 +7,11 @@ import { IMGURL, URL } from '../url'
 import PopUp from '../messageComponents/popup'
 import OrderSuccess from '../messageComponents/ordermsg/OrderSuccess'
 import NotSigned from '../messageComponents/notsigned'
+import { useLocation } from 'react-router-dom'
 
 function OrderMethod() {
-    const { Msg, Status, loading, Product } = useFetchProducts(`/orders/payment-method${window.location.search}`)
+    const query = useLocation()
+    const { Msg, Status, loading, Product } = useFetchProducts(`/orders/payment-method${query.search}`)
     const [quantity, setQuantity] = useState(1)
     const [paymentMethod, setPaymentMethod] = useState('')
     const [L, setL] = useState(false)

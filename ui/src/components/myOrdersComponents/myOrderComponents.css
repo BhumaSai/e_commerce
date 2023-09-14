@@ -230,8 +230,8 @@
     top: 0;
     left: 0;
     background: #000;
-    animation: toTop .5s 1;
-    transition: 1s;
+    animation: toTop .5s normal;
+    transition: top 1s;
     padding: 5px;
     display: flex;
     flex-direction: column;

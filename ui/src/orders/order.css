@@ -28,7 +28,9 @@
 
 .order-method-section .order-method .item .item-img img {
     max-height: 200px;
+    width: 100%;
     object-fit: cover;
+    border-radius: 15px;
 }
 
 .order-method-section .order-method .item .item-img .buttons {

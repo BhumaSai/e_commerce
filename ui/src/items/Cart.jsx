@@ -63,7 +63,7 @@ function Cart() {
     }
     // buy single product 
     const buySingleProduct = (id) => {
-        navigate(`/order-method?d=${Date.now()}&id=${id}`)
+        navigate(`/order-method?id=${id}`)
     }
 
     // onclick window close popup
@@ -83,27 +83,26 @@ function Cart() {
 
                                 <div className="cart-items">
 
-                                    {
-                                        !Product && loading ? <Loading /> :
-                                            Array.isArray(Items) && Items.map(data => {
-                                                const { _id, category, price, color, description, image, title } = data
+                                    {loading ? <Loading /> :
+                                        Array.isArray(Items) && Items.map(data => {
+                                            const { _id, category, price, color, description, image, title } = data
 
-                                                return (
-                                                    <div key={_id} className="item">
-                                                        <h1><span className='spanEle'>title : </span>{title}</h1>
-                                                        <button onClick={(e) => deleteItem(e, _id, price)} className=' btn trash' title='Delete From Wishlist'>< BsTrashFill className='icon' color='#000' /></button>
-                                                        <img src={`${IMGURL}` + image} alt="" />
-                                                        <div className="content">
-                                                            <h4><span className='spanEle'>category : </span>{category}</h4>
-                                                            <p><span className='spanEle'>description : </span>{description}</p>
-                                                            <h3 style={{ color: color === 'black' ? '#fff' : color }}><span className='spanEle'>color : </span>{color}</h3>
-                                                            <h5><span className='spanEle'>price</span> :- ₹{price}</h5>
-                                                            <button className='btn' onClick={() => buySingleProduct(_id)}>proceed to buy</button>
-                                                        </div>
-
+                                            return (
+                                                <div key={_id} className="item">
+                                                    <h1><span className='spanEle'>title : </span>{title}</h1>
+                                                    <button onClick={(e) => deleteItem(e, _id, price)} className=' btn trash' title='Delete From Wishlist'>< BsTrashFill className='icon' color='#000' /></button>
+                                                    <img src={`${IMGURL}` + image} alt="" />
+                                                    <div className="content">
+                                                        <h4><span className='spanEle'>category : </span>{category}</h4>
+                                                        <p><span className='spanEle'>description : </span>{description}</p>
+                                                        <h3 style={{ color: color === 'black' ? '#fff' : color }}><span className='spanEle'>color : </span>{color}</h3>
+                                                        <h5><span className='spanEle'>price</span> :- ₹{price}</h5>
+                                                        <button className='btn' onClick={() => buySingleProduct(_id)}>proceed to buy</button>
                                                     </div>
-                                                )
-                                            })
+
+                                                </div>
+                                            )
+                                        })
                                     }
 
                                     {
