@@ -68,12 +68,12 @@ app.get('/signout', checkToken, (req, res) => {
             res.clearCookie("U_A")
         }
         return res.status(201).json({
-            errorMsg: 'signed out'
+            errorMsg: 'signed out successfully'
         })
     } catch (error) {
-        console.log(error);
         return res.status(500).json({
-            erroMsg: 'server error'
+            erroMsg: 'server error',
+            message: error.message
         })
     }
 })
