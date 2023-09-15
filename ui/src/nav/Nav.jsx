@@ -16,12 +16,7 @@ function Nav({ query }) {
     const [product, setProduct] = useContext(Store)
     const navigate = useNavigate()
     const clickOutside = useRef(null)
-    const user = useRef(null)
 
-    if (auth) {
-        let User = JSON.parse(localStorage.getItem("User"))
-        user.current = User.name
-    }
     const searchProdcut = (e) => {
         e.preventDefault()
         if (search !== '') {
@@ -50,7 +45,7 @@ function Nav({ query }) {
         URL.get('/auth').then(res => {
             setAuth(res.data.signed)
         }).catch(err => {
-            setAuth(false);
+            setAuth(err.response.data.signed);
         })
     }, [])
     // drop dowm close function
@@ -83,7 +78,7 @@ function Nav({ query }) {
                     {
                         auth ?
                             <div className="my-profile">
-                                <span className='profile' style={{ textTransform: 'capitalize' }}>{user.current ? user.current[0] : ''}</span>
+                                <span className='profile' style={{ textTransform: 'capitalize' }}>{localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')).name[0] : ''}</span>
                                 {
                                     arrowToggle ?
                                         <button onClick={() => setArrowToggle(!arrowToggle)} className='btn'><AiOutlineUp /></button> :
