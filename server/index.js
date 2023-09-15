@@ -64,19 +64,22 @@ app.use('/orders', Order)
 
 app.get('/signout', checkToken, (req, res) => {
     try {
-        res.cookie('U_A', 'sign out successfully', { httpOnly: true, expires: new Date(Date.now() + 86400000), sameSite: "none", secure: true })
+        if (req.cookies.U_A) {
+            res.clearCookie("U_A")
+        }
         return res.status(201).json({
-            errorMsg: 'log out successfully'
+            errorMsg: 'signed out'
         })
     } catch (error) {
+        console.log(error);
         return res.status(500).json({
-            errorMsg: 'server error'
+            erroMsg: 'server error'
         })
     }
 })
-app.get('/auth', checkToken, (req, res) => {
+app.get('/auth', (req, res) => {
     try {
-        if (!req.user.id) {
+        if (!req.cookies.U_A) {
             return res.status(401).json({
                 signed: false
             })

@@ -17,7 +17,6 @@ function Nav({ query }) {
     const navigate = useNavigate()
     const clickOutside = useRef(null)
 
-
     const searchProdcut = (e) => {
         e.preventDefault()
         if (search !== '') {
@@ -32,8 +31,8 @@ function Nav({ query }) {
     }
     const signOut = () => {
         window.location.reload()
-        localStorage.clear()
         URL.get('/signout').then(res => {
+            localStorage.clear()
             setMsg(res.data.errorMsg)
         }).catch(err => {
             alert(err.response.data.errorMsg)
@@ -44,7 +43,7 @@ function Nav({ query }) {
         URL.get('/auth').then(res => {
             setAuth(res.data.signed)
         }).catch(err => {
-            setAuth(err.response.data.signed);
+            setAuth(err.response.data.signed || false);
         })
     }, [])
     // drop dowm close function
