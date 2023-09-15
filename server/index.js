@@ -63,14 +63,13 @@ app.use('/orders', Order)
 
 app.get('/signout', (req, res) => {
     try {
+        res.clearCookie()
         if (req.cookies.U_A) {
             res.clearCookie('U_A')
         }
-        if (!req.cookies.U_A) {
-            return res.status(201).json({
-                errorMsg: 'sign out successfully'
-            })
-        }
+        return res.status(201).json({
+            errorMsg: 'sign out successfully'
+        })
 
     } catch (error) {
         return res.status(500).json({
