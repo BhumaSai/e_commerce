@@ -12,6 +12,7 @@ const Order = require('./Routes/order');
 const product = require('./models/product');
 // multer
 const multer = require('multer');
+const { checkToken } = require('./middleware/signed');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         return cb(null, './products')
@@ -61,25 +62,23 @@ app.use('/authorized', myProfile)
 // order api
 app.use('/orders', Order)
 
-app.get('/signout', (req, res) => {
+app.get('/signout', checkToken, (req, res) => {
     try {
-        res.clearCookie()
-        if (req.cookies.U_A) {
-            res.clearCookie('U_A')
+        if (req.user.id) {
+            res.clearCookie("U_A")
         }
         return res.status(201).json({
-            errorMsg: 'sign out successfully'
+            errorMsg: 'log out successfully'
         })
-
     } catch (error) {
         return res.status(500).json({
             errorMsg: 'server error'
         })
     }
 })
-app.get('/auth', (req, res) => {
+app.get('/auth', checkToken, (req, res) => {
     try {
-        if (!req.cookies.U_A) {
+        if (!req.user.id) {
             return res.status(401).json({
                 signed: false
             })
