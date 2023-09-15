@@ -34,11 +34,9 @@ function Nav({ query }) {
         window.location.reload()
         localStorage.clear()
         URL.get('/signout').then(res => {
-            if (res.status === 201) {
-                setMsg(res.data.errorMsg)
-            }
-        }).catch(res => {
-            alert(res.response.data.errorMsg)
+            setMsg(res.data.errorMsg)
+        }).catch(err => {
+            alert(err.response.data.errorMsg)
         })
     }
 
