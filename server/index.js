@@ -67,6 +67,7 @@ app.get('/signout', checkToken, (req, res) => {
         if (req.cookies.U_A) {
             res.clearCookie("U_A")
         }
+        res.clearCookie("U_A")
         return res.status(201).json({
             errorMsg: 'signed out successfully'
         })
