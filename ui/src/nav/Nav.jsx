@@ -17,6 +17,7 @@ function Nav({ query }) {
     const navigate = useNavigate()
     const clickOutside = useRef(null)
 
+
     const searchProdcut = (e) => {
         e.preventDefault()
         if (search !== '') {

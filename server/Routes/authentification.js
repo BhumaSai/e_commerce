@@ -53,9 +53,10 @@ auth.post('/login', async (req, res) => {
                 errorMsg: 'incorrect Password'
             })
         }
+
         // jwt
         const Token = jwt.sign({ id: checkMail._id }, process.env.JWT_PASSWORD, { expiresIn: '30d' })
-        res.cookie('Token', Token, { httpOnly: true, expires: new Date(Date.now() + 60 * 60 * 24 * 1000), sameSite: "lax", secure })
+        res.cookie('U_A', Token, { httpOnly: true, expires: new Date(Date.now() + 86400000), sameSite: "lax", secure: true })
 
         return res.status(201).json({
             errorMsg: 'login successfully',
