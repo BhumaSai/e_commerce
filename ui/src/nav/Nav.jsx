@@ -31,11 +31,15 @@ function Nav({ query }) {
     }
     const signOut = () => {
         window.location.reload()
-        URL.get('/signout').then(res => {
-            localStorage.clear()
-            setMsg(res.data.errorMsg)
-        }).catch(err => {
-            alert(err.response.data.errorMsg)
+        URL.get('/signout').then((res, err) => {
+            if (res.status === 201) {
+                setMsg(res.data.errorMsg)
+                localStorage.clear()
+            }
+            if (err) {
+                setMsg('something went wrong')
+            }
+
         })
     }
 
