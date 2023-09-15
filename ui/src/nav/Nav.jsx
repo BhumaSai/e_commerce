@@ -29,17 +29,14 @@ function Nav({ query }) {
             navigate(`/search/query=${search || query}`)
         }
     }
+
+
     const signOut = () => {
         window.location.reload()
-        URL.get('/signout').then((res, err) => {
-            if (res.status === 201) {
-                setMsg(res.data.errorMsg)
-                localStorage.clear()
-            }
-            if (err) {
-                setMsg('something went wrong')
-            }
-
+        URL.get('/signout').then(res => {
+            setMsg(res.data.errorMsg)
+        }).catch(err => {
+            setMsg(err.message || err.response.data.errorMsg)
         })
     }
 
