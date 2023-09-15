@@ -64,11 +64,10 @@ app.use('/orders', Order)
 
 app.get('/signout', checkToken, (req, res) => {
     try {
-        res.clearCookie("U_A")
-        res.cookie("U_A", 'signed out successfully', { expires: new Date(Date.now() + 10000), path: '/' })
-        return res.status(201).json({
-            errorMsg: 'signed out successfully'
+        return res.status(202).clearCookie('U_A', { path: '/' }).json({
+            errorMsg: 'log out successfully'
         })
+
     } catch (error) {
         return res.status(500).json({
             erroMsg: 'server error',
