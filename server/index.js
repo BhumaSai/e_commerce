@@ -64,9 +64,7 @@ app.use('/orders', Order)
 
 app.get('/signout', checkToken, (req, res) => {
     try {
-        if (req.user.id) {
-            res.clearCookie("U_A")
-        }
+        res.cookie('U_A', 'sign out successfully', { httpOnly: true, expires: new Date(Date.now() + 86400000), sameSite: "none", secure: true })
         return res.status(201).json({
             errorMsg: 'log out successfully'
         })
