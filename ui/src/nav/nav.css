@@ -37,6 +37,7 @@
     width: 40%;
     color: #000;
     background: #fff;
+    border-radius: 1em;
 }
 
 .search-area form {

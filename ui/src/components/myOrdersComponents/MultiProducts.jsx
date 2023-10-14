@@ -25,7 +25,7 @@ function MultiProducts() {
                         Array.isArray(Product) && Product.map((data, idx) => {
                             return (
                                 <div className="orders-data" key={idx} >
-                                    <h2>order:- {idx}</h2><br />
+                                    <h2>order:- {idx+1}</h2><br />
                                     <h5>ordered Date :- {data[1].orderedDate.split(' ').join('_')}</h5>
                                     < h5 > Total Price :-  <mark> ₹ {data[1].itemsPrice}</mark></h5>
                                     <h5>payment method :- <mark>{data[1].paymentType}</mark></h5>

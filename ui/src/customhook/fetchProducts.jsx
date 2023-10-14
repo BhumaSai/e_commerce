@@ -19,7 +19,7 @@ function useFetchProducts(url) {
                     setLoading(false)
                 })
                 .catch(error => {
-                    setStatus(error.message || error.response.status);
+                    setStatus(error.response.status);
                     setLoading(false)
                     setMsg(error.message || error.response.data.errorMsg)
                 })

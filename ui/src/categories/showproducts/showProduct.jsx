@@ -15,7 +15,7 @@ function ShowProduct({ addToCart, addToWishlist, product, setProduct }) {
                     <button onClick={() => setProduct('')} className='btn close-btn'><GrClose fontSize={'1.5rem'} style={{ background: "#fff", borderRadius: '4px' }} /></button>
                     <img src={`${IMGURL}` + product.image} alt="" />
                     <div className="product-det">
-                        <h4>title : {product.title} </h4>
+                        <h4 style={{color:'black'}}>title : {product.title} </h4>
                         <h5><b>type</b> : {product.type}</h5>
                         <h5><b>Price</b> : <span >{product.price}</span></h5>
                         <p><b>description</b>: {product.description} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio blanditiis molestias expedita nemo ex ducimus alias similique dolore! Repellendus ad, possimus odit consequuntur harum sed optio quaerat maiores accusamus totam?</p>

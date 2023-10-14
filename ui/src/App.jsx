@@ -12,6 +12,7 @@ import SingleProduct from './components/myOrdersComponents/SingleProduct'
 import OrderMethod from './orders/orderMethod';
 import Search from './components/Search'
 import Test from './orders/test';
+import Nav from './nav/Nav';
 
 // dynamic  importing
 const Home = React.lazy(() => import('./components/Home'))
@@ -33,6 +34,7 @@ function App() {
   const [products, setProducts] = useState(null)
 
   return (
+
     <>
       <Store.Provider value={[products, setProducts]}>
         <HashRouter>

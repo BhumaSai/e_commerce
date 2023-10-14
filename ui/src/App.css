@@ -28,10 +28,10 @@ body {
 }
 
 :root {
-  --nav-color: rgb(135, 16, 225);
-  --light: rgb(138, 44, 188);
+  --nav-color: rgb(55, 9, 135);
+  --light: rgb(37, 5, 111);
   --active: #aa84bc;
-  --btn-bg: rgb(118, 3, 232);
+  --btn-bg: rgb(40, 7, 113);
   --btn-hover: rgba(118, 3, 232, 0.293);
   --input-bg: rgb(48, 134, 147);
   --input-hover: rgba(15, 58, 58, 0.937);

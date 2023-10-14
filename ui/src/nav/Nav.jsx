@@ -32,9 +32,9 @@ function Nav({ query }) {
 
 
     const signOut = () => {
-        window.location.reload()
         URL.get('/signout').then(res => {
             setMsg(res.data.errorMsg)
+            navigate('/log_in')
         }).catch(err => {
             setMsg(err.message || err.response.data.errorMsg)
         })
@@ -65,7 +65,7 @@ function Nav({ query }) {
                     <div className="search-area padding">
                         <form>
                             <input type="search" className='input-search' name="search" id="search" placeholder='Search' value={search} onChange={(e) => setsearch(e.target.value)} />
-                            <button type="submit" onClick={searchProdcut} className='btn'><AiOutlineSearch /></button>
+                            <button type="submit" onClick={searchProdcut} className='btn' aria-label='lable'><AiOutlineSearch /></button>
                         </form>
                     </div>
                     <div className="items padding display-mobile">

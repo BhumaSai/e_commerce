@@ -4,8 +4,10 @@ import useFetchProducts from '../../customhook/fetchProducts'
 import Loading from '../../errorhandlers/loading';
 import NotSigned from '../../messageComponents/notsigned';
 import { IMGURL } from '../../url';
+import { useNavigate } from 'react-router-dom';
 
 function SingleProduct() {
+    const Navigate = useNavigate()
 
     const { loading, Status, Product, Msg } = useFetchProducts('/authorized/my-orders-singleProducts')
 
@@ -38,6 +40,14 @@ function SingleProduct() {
                             </div>
                         )
                     })
+            }
+            {
+                Array.isArray(Product) && Product.length ===0  && !loading?
+                <center><div><br />
+                    <h1>you didn't order anything</h1><br />
+                    <button className='btn' style={{textTransform:'capitalize', background:"var(--btn-bg)",color:'#fff',padding:'8px'}} onClick={()=> Navigate('/')}>shop now</button>
+                    </div></center>
+                :null
             }
         </div>
     )

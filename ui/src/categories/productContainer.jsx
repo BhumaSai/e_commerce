@@ -52,7 +52,7 @@ function ProductContainer({ loading, Products }) {
                                 return (
                                     <div key={idx} className='men-product-card' >
                                         <button title='add to wishlist' className='btn wishlist' onClick={() => addToWishlist(data)}><AiOutlineHeart className='icon' /></button>
-                                        <img src={`${IMGURL}` + image} onClick={() => showProduct(data)} alt={type} title={title} />
+                                        <img fetchpriority="low" src={`${IMGURL}` + image} onClick={() => showProduct(data)} alt={type} title={title} />
                                         <p className='color'>color:<span style={{ color: color === 'black' ? 'purple' : color }}>{color}</span></p>
                                         <h5>price: <span> ₹ {price} </span></h5>
                                         <p>{description}</p>

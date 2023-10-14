@@ -64,7 +64,8 @@ app.use('/orders', Order)
 
 app.get('/signout', checkToken, (req, res) => {
     try {
-        return res.status(202).clearCookie('U_A', { path: '/' }).json({
+
+        return res.status(202).clearCookie('U_A', { httpOnly: true, expires: new Date(Date.now()), sameSite: "none", secure: true }).json({
             errorMsg: 'log out successfully'
         })
 

@@ -75,15 +75,17 @@ function Cart() {
     return (
         <>
             <Nav />
+            {loading ? <Loading /> :null}
             {
                 Status === 500 ? <ServerError msg={Msg} /> :
+                
                     <div className='cart-container'>
                         {
                             Status === 404 ? <NotSigned msg={Msg} icon={<AiOutlineShoppingCart fontSize={'9rem'} />} /> :
 
                                 <div className="cart-items">
 
-                                    {loading ? <Loading /> :
+                                    {
                                         Array.isArray(Items) && Items.map(data => {
                                             const { _id, category, price, color, description, image, title } = data
 
@@ -111,7 +113,10 @@ function Cart() {
                                                 <p>Total Products :- <span>{Items.length}</span></p>
                                                 <h5>Total amount :- ₹ {Price}</h5>
                                                 <button className='btn' onClick={() => setBuyStatus(true)}>Buy all</button>
-                                            </div> : <Empty msg='Your cart is empty' text='add items in cart' icon={<AiOutlineShoppingCart style={{ height: 'auto', width: '30%' }} />} />
+                                            </div> :null
+                                    }
+                                    {   
+                                    Array.isArray(Items) && Items.length ===0 ?  <Empty msg='Your cart is empty' text='add items in cart' icon={<AiOutlineShoppingCart style={{ height: 'auto', width: '30%' }} />} /> : null
                                     }
                                     {
                                         pop ? <PopUp msg={pop} /> : null
