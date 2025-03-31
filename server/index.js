@@ -46,6 +46,17 @@ require("dotenv").config();
 // db
 db.connect(process.env.MONGO_URI);
 
+const wishget = {
+  origin: ["https://feshopping.vercel.app"],
+  methods: ["GET", "PUT", "DELETE"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "Access-Control-Allow-Origin",
+  ],
+  credentials: true,
+};
+
 app.use(
   cors({
     origin: ["https://feshopping.vercel.app", "http://localhost:3000"],
@@ -70,7 +81,7 @@ app.use("/api", products);
 // authentification
 app.use("/authentification", auth);
 // my-profile
-app.use("/authorized", myProfile);
+app.use("/authorized", cors(wishget), myProfile);
 // order api
 app.use("/orders", Order);
 
