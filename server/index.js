@@ -97,6 +97,7 @@ app.get("/auth", (req, res) => {
     }
     return res.status(401).json({
       signed: false,
+      req: req.cookies,
     });
   } catch (error) {
     res.status(500).json({
