@@ -46,9 +46,9 @@ require("dotenv").config();
 // db
 db.connect(process.env.MONGO_URI);
 
-const wishget = {
+const corsatt = {
   origin: ["https://feshopping.vercel.app"],
-  methods: ["GET", "PUT", "DELETE"],
+  methods: ["GET", "PUT", "DELETE", "POST", "UPDATE"],
   allowedHeaders: [
     "Content-Type",
     "Authorization",
@@ -57,18 +57,7 @@ const wishget = {
   credentials: true,
 };
 
-app.use(
-  cors({
-    origin: ["https://feshopping.vercel.app", "http://localhost:3000"],
-    methods: ["GET", "POST", "UPDATE", "DELETE", "PUT"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "Access-Control-Allow-Origin",
-    ],
-    credentials: true,
-  })
-);
+app.use(cors(wishget));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -76,14 +65,19 @@ app.use(bodyParser.json());
 app.use(express.static("products"));
 
 // Routes
+app.use("/", cors(cors(corsatt)), (req, res) => {
+  res.status(200).json({
+    message: "invalid request",
+  });
+});
 // all Products
-app.use("/api", products);
+app.use("/api", cors(corsatt), products);
 // authentification
-app.use("/authentification", auth);
+app.use("/authentification", cors(corsatt), auth);
 // my-profile
-app.use("/authorized", cors(wishget), myProfile);
+app.use("/authorized", cors(corsatt), myProfile);
 // order api
-app.use("/orders", Order);
+app.use("/orders", cors(corsatt), Order);
 
 app.get("/signout", checkToken, (req, res) => {
   try {
@@ -105,7 +99,7 @@ app.get("/signout", checkToken, (req, res) => {
     });
   }
 });
-app.get("/auth", (req, res) => {
+app.get("/auth", cors(corsatt), (req, res) => {
   try {
     if (req.cookies.U_A) {
       return res.status(200).json({
@@ -125,7 +119,7 @@ app.get("/auth", (req, res) => {
 
 // upload products
 
-app.post("/upload", upload.single("image"), (req, res) => {
+app.post("/upload", cors(corsatt), upload.single("image"), (req, res) => {
   try {
     new product({
       userid: req.body.userid,
