@@ -74,6 +74,7 @@ auth.post("/login", async (req, res) => {
       sameSite: "none",
       domain: "ecommercebe.onrender.com",
       secure: true,
+      path: "/",
     });
 
     return res.status(201).json({
