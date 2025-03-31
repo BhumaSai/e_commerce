@@ -70,7 +70,7 @@ auth.post("/login", async (req, res) => {
     });
     res.cookie("U_A", Token, {
       httpOnly: true,
-      expires: 864000000,
+      expires: new Date(Date.now() + 10800),
       sameSite: "none",
       secure: true,
     });
