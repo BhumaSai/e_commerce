@@ -4,6 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import './home.css'
 
 function Home() {
+
     return (
         <>
             <Nav />
