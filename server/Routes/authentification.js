@@ -70,11 +70,9 @@ auth.post("/login", async (req, res) => {
     });
     res.cookie("U_A", Token, {
       httpOnly: true,
-      expires: 86400000,
+      expires: 864000000,
       sameSite: "none",
-      domain: "ecommercebe.onrender.com",
       secure: true,
-      path: "/",
     });
 
     return res.status(201).json({
