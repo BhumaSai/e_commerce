@@ -50,7 +50,11 @@ app.use(
   cors({
     origin: ["https://feshopping.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST", "UPDATE", "DELETE", "PUT"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Access-Control-Allow-Origin",
+    ],
     credentials: true,
   })
 );
