@@ -44,7 +44,6 @@ function Nav({ query }) {
         URL.get('/auth').then(res => {
             setAuth(res.data.signed)
         }).catch(err => {
-            console.log(err);
             setAuth(err.response.data.signed || false);
         })
     }, [])
