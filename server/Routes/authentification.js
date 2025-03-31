@@ -71,7 +71,7 @@ auth.post("/login", async (req, res) => {
     res.cookie("U_A", Token, {
       httpOnly: true,
       expires: 86400000,
-      sameSite: "lax",
+      sameSite: "none",
       domain: "ecommercebe.onrender.com",
       secure: true,
       path: "/",

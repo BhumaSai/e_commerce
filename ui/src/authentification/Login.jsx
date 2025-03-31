@@ -40,9 +40,6 @@ function Login() {
         }
     }
 
-
-
-
     return (
         <>
             <Suspense fallback={<p>loading......</p>}><Nav /></Suspense>
