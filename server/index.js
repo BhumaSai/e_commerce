@@ -48,11 +48,12 @@ db.connect(process.env.MONGO_URI);
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://feshopping.vercel.app"],
+    origin: ["http://localhost:3000", "https://feshopping.vercel.app/"],
     methods: ["GET", "POST", "UPDATE", "DELETE", "PUT"],
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
