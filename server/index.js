@@ -47,7 +47,7 @@ require("dotenv").config();
 db.connect(process.env.MONGO_URI);
 
 const corsatt = {
-  origin: ["https://feshopping.vercel.app"],
+  origin: ["https://feshopping.vercel.app", "http://localhost:3000"],
   methods: ["GET", "PUT", "DELETE", "POST", "UPDATE"],
   allowedHeaders: [
     "Content-Type",
@@ -65,7 +65,7 @@ app.use(bodyParser.json());
 app.use(express.static("products"));
 
 // Routes
-app.use("/", cors(cors(corsatt)), (req, res) => {
+app.get("/", cors(cors(corsatt)), (req, res) => {
   res.status(200).json({
     message: "invalid request",
   });
