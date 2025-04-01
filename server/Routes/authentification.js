@@ -66,16 +66,14 @@ auth.post("/login", async (req, res) => {
 
     // jwt
     const Token = jwt.sign({ id: checkMail._id }, process.env.JWT_PASSWORD, {
-      expiresIn: "30d",
+      expiresIn: "86400000",
     });
     res.cookie("U_A", Token, {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      expires: new Date(Date.now() + 3600 * 5),
-      domain: "ecommercebe.onrender.com",
+      expires: new Date(Date.now() + 86400000),
       path: "/",
-      priority: "high",
     });
 
     return res.status(201).json({

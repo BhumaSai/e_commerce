@@ -86,7 +86,6 @@ span {
     line-height: 1.5rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
     overflow: hidden;
 }
 
@@ -100,7 +99,6 @@ span {
     }
 
     .men-product-card p {
-        -webkit-line-clamp: 2;
         line-height: 1rem;
         font-size: .5rem;
         width: 100%;
